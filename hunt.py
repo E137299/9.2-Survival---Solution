@@ -65,13 +65,12 @@ class Rabbit(Turtle):
         self.shape("images/bunny.gif")
         self.penup()
         self.screen = screen
-        print("Check")
-        self.screen.onkeypress(self.turn_right,"D")
-        self.screen.onkeypress(self.turn_left,"A")
-        self.screen.onkeypress(self.move,"W")
+        self.screen.onkeypress(self.turn_right, "Right")
+        self.screen.onkeypress(self.turn_left, "Left")
         print("Check")
     
     def turn_right(self):
+        print("right")
         self.right(10)
     
     def turn_left(self):
@@ -86,7 +85,7 @@ class Rabbit(Turtle):
 
 screen = Screen()
 screen.tracer(0)
-screen.listen
+screen.listen()
 screen.bgcolor("black")
 screen.register_shape("images/lettuce.gif")
 screen.register_shape("images/carrot.gif")
