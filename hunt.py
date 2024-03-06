@@ -58,13 +58,18 @@ class Predator(Turtle):
         self.forward(5)
     
 class Rabbit(Turtle):
-    def __init__(self):
+    def __init__(self, screen):
+        super().__init__()
+        print("Check")
         self.speed(0)
-        self.shape("images/rabbit.gif")
-        # self.penup()
-        screen.onkeypress(self.turn_right,"Right")
-        screen.onkeypress(self.turn_left,"Left")
-        screen.onkeypress(self.move,"Up")
+        self.shape("images/bunny.gif")
+        self.penup()
+        self.screen = screen
+        print("Check")
+        self.screen.onkeypress(self.turn_right,"D")
+        self.screen.onkeypress(self.turn_left,"A")
+        self.screen.onkeypress(self.move,"W")
+        print("Check")
     
     def turn_right(self):
         self.right(10)
@@ -73,6 +78,7 @@ class Rabbit(Turtle):
         self.left(10)
 
     def move(self):
+        print("Forward")
         self.forward(10)
 
 
@@ -85,12 +91,12 @@ screen.bgcolor("black")
 screen.register_shape("images/lettuce.gif")
 screen.register_shape("images/carrot.gif")
 screen.register_shape("images/hawk.gif")
-screen.register_shape("images/rabbit.gif")
+screen.register_shape("images/bunny.gif")
 screen.tracer(1)
 
 draw_border()
 
-player = Rabbit()
+player = Rabbit(screen)
 
 meals = []
 for n in range(10):
