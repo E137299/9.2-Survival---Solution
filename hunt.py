@@ -67,19 +67,13 @@ class Rabbit(Turtle):
         self.screen = screen
         self.screen.onkeypress(self.turn_right, "Right")
         self.screen.onkeypress(self.turn_left, "Left")
-        print("Check")
+
     
     def turn_right(self):
-        print("right")
         self.right(10)
     
     def turn_left(self):
         self.left(10)
-
-    def move(self):
-        print("Forward")
-        self.forward(10)
-
 
 
 
@@ -111,5 +105,7 @@ while True:
     
     for hawk in predators:
         hawk.move()
+    
+    player.forward(2)
 
 screen.mainloop()
